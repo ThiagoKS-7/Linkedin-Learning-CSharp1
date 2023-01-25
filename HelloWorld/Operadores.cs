@@ -30,7 +30,13 @@ namespace HelloWorld
             int i = 2;
             int j = 4;
 
-            Console.WriteLine($"Comaparando numeros=> i = j: {i == j}, i !=j {i != j}");
+            Console.WriteLine($"Comparando numeros => i = j: {i == j}, i !=j {i != j}");
+            Console.WriteLine($"Comparando tamanhos => i > j: {i > j}, i < j { i < j}, i >= j: {i >= j} e i <= j {i <= j} ");
+
+            //Operadores lógicos
+            Console.WriteLine($"AND => {i == j && cidade1 == cidade2}");
+            Console.WriteLine($"OR => {i < j || cidade1 == cidade2}");
+            Console.WriteLine($"NOT COM AND => {i != j && cidade1 != cidade2}");
 
         }
     }
