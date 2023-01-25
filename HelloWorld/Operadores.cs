@@ -8,7 +8,24 @@ namespace HelloWorld
 {
     public class Operadores
     {
-        public void MostraOperadores()
+        private Operadores() { }
+
+        private static Operadores _instance;
+
+        public static Operadores GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Operadores();
+            }
+            return _instance;
+        }
+
+        public void run()
+        {
+            MostraOperadores();
+        }
+        private void MostraOperadores()
         {
             Console.WriteLine("\nOperadores: ");
             // Operadores Aritméticos
