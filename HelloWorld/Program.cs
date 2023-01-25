@@ -13,8 +13,10 @@ namespace HelloWorld
             // See https://aka.ms/new-console-template for more information
             Console.WriteLine("Hello, World!");
 
-            Tipos teste = new Tipos();
-            teste.ConhecendoTipos();
+            Tipos tp = new Tipos();
+            Operadores op = new Operadores();
+            tp.ConhecendoTipos();
+            op.MostraOperadores();
         }
     }
 }

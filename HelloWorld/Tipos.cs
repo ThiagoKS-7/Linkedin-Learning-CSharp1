@@ -47,9 +47,13 @@ namespace HelloWorld
             Console.WriteLine($"Cidade: {cidade}, idade: {idade}");
 
             /* CONSTANTES */
+            const string pais = "Brasil"; // valor nao pode mudar
+            Console.WriteLine($"País: {pais}");
 
+            /* CASTS */
 
-
+            f = idade;
+            f = (float)dec; // igual ao C
         }
     }
 }
