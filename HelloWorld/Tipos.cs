@@ -8,10 +8,27 @@ namespace HelloWorld
 {
     public class Tipos
     {
-        public void ConhecendoTipos()
+        private Tipos() { }
+
+        private static Tipos _instance;
+
+        public static Tipos GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Tipos();
+            }
+            return _instance;
+        }
+
+        public void run()
+        {
+            ConhecendoTipos()
+        }
+        private void ConhecendoTipos()
         {
             /* Lembrete de tipos de variáveis EXPLICITAS*/
-
+            Console.WriteLine("\nVariaveis: ");
             int i = 10;
             Console.WriteLine($"Valor da int: {i}");
 
