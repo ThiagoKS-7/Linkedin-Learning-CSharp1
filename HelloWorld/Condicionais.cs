@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Condicionais:IFundamentos
+    public class Condicionais : IFundamentos
     {
         private Condicionais() { }
 
@@ -27,14 +27,39 @@ namespace HelloWorld
         }
 
 
-        private void GetTodosMeses()
+        private List<String> GetTodosMeses()
         {
-
+            List<String> meses = new List<String>();
+            meses.Add("JANEIRO");
+            meses.Add("FEVEREIRO");
+            meses.Add("MARCO");
+            meses.Add("ABRIL");
+            meses.Add("MAIO");
+            meses.Add("JUNHO");
+            meses.Add("JULHO");
+            meses.Add("AGOSTO");
+            meses.Add("SETEMBRO");
+            meses.Add("OUTUBRO");
+            meses.Add("NOVEMBRO");
+            meses.Add("DEZEMBRO");
+            return meses;
         }
 
-        private void MostraCondicionais()
+        private List<String> GetMesesComTrinta()
         {
-            Console.WriteLine("\n Condicionais: ");
+            /* Criando uma lista com os meses que tem 30 dias,
+            * pra dai checar se a string pega ta nesses meses
+            */
+            List<String> mesesComTrinta = new List<String>();
+            mesesComTrinta.Add("ABRIL");
+            mesesComTrinta.Add("JUNHO");
+            mesesComTrinta.Add("SETEMBRO");
+            mesesComTrinta.Add("NOVEMBRO");
+            return mesesComTrinta;
+        }
+
+        private void ChecaNota()
+        {
             const string APROVADO = "Aprovado!";
             const string REPROVADO = "Reprovado!";
             const string EM_REC = "Em Recuperação";
@@ -54,42 +79,58 @@ namespace HelloWorld
             {
                 Console.WriteLine(REPROVADO);
             }
+        }
 
-            Console.Write("[SWITCH] Digite um mês: ");
-            string mes = Console.ReadLine();
+        private void ChecaDiasDoMes()
+        {
+            List<String> meses = GetTodosMeses();
+            List<String> mesesComTrinta = GetMesesComTrinta();
+            string mes = "";
 
-            /* Criando uma lista com os meses que tem 30 dias,
-             * pra dai checar se a string pega ta nesses meses
-             */
-            List<String> mesesComTrinta = new List<String>();
-            mesesComTrinta.Add("ABRIL");
-            mesesComTrinta.Add("JUNHO");
-            mesesComTrinta.Add("SETEMBRO");
-            mesesComTrinta.Add("NOVEMBRO");
+            while (!meses.Contains(mes.ToUpper()))
+            {
+                Console.Write("[SWITCH] Digite um mês: ");
+                mes = Console.ReadLine();
+
+            }
+
+
             bool temTrintaDias = mesesComTrinta.Contains(mes);
 
-            switch (mes.ToUpper()) {
+            switch (mes.ToUpper())
+            {
                 case "FEVEREIRO":
                     int CurrentYear = DateTime.Now.Year;
                     if (DateTime.IsLeapYear(CurrentYear))
                     {
                         Console.WriteLine("29 dias.");
-                    } else
+                    }
+                    else
                     {
                         Console.WriteLine("28 dias.");
                     }
                     break;
-                default: 
+                default:
                     if (temTrintaDias)
                     {
                         Console.WriteLine("30 dias.");
-                    } else
+                    }
+                    else
                     {
                         Console.WriteLine("31 dias.");
                     }
                     break;
 
             }
+        }
+
+        private void MostraCondicionais()
+        {
+            Console.WriteLine("\n Condicionais: ");
+            ChecaNota();
+            ChecaDiasDoMes();
+            Console.Write("\n Clique qualquer tecla para sair... ");
+            Console.ReadLine();
         }
     }
 }
