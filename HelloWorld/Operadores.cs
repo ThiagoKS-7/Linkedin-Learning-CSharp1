@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Operadores
+    public class Operadores : IFundamentos
     {
         private Operadores() { }
 
