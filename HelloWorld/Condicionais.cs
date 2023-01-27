@@ -129,8 +129,6 @@ namespace HelloWorld
             Console.WriteLine("\n Condicionais: ");
             ChecaNota();
             ChecaDiasDoMes();
-            Console.Write("\n Clique qualquer tecla para sair... ");
-            Console.ReadLine();
         }
     }
 }
