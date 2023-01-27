@@ -18,12 +18,14 @@ namespace HelloWorld
             Strings st = Strings.GetInstance();
             Condicionais cd = Condicionais.GetInstance();
             Loops lp = Loops.GetInstance();
+            Colecoes cl = Colecoes.GetInstance();
 
             tp.run();
             op.run();
             st.run();
             cd.run();
             lp.run();
+            cl.run();
             Console.Write("\n Clique qualquer tecla para sair... ");
             Console.ReadLine();
         }
