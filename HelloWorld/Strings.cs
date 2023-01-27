@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Strings
+    public class Strings : IFundamentos
     {
         private Strings() { }
 
