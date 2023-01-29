@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Colecoes : IFundamentos
+    public class Colecoes : Fundamento
     {
         private Colecoes() { }
 
@@ -21,7 +21,7 @@ namespace HelloWorld
             return _instance;
         }
 
-        public void run()
+        public override void run()
         {
             MostraColecoes();
         }
@@ -84,9 +84,10 @@ namespace HelloWorld
         private void MostraQueue()
         {
             /*
-             * FIFO - First in First Out - é basicamente a regra de uma fila (nao pode mudar as posicoes dps de atribuir)
+             * É uma fila
+             * FIFO - First in First Out - sempre mostra ou remove o primeiro elemento
              */
-            Console.WriteLine("Na Queue: ");
+            Console.WriteLine("\nNa Queue: ");
             Queue<string> fila = new Queue<string>();
             fila.Enqueue("Remova-me");
             fila.Enqueue("Ola");
@@ -97,13 +98,58 @@ namespace HelloWorld
             {
                 Console.WriteLine(obj);
             }
+            Console.WriteLine($"Total: {fila.Count}");
+            Console.WriteLine($"Primeiro elem: {fila.Peek()}");
         }
+
+        private  void MostraStack()
+        {
+            /*
+             * É uma pilha
+             * LIFO - Last In First Out - O ultimo a entrar é o primeiro q sai
+             */
+            Console.WriteLine("\n Na stack:");
+            Stack<string> pilha = new Stack<string>();
+            pilha.Push("Ola");
+            pilha.Push("pessoal");
+            pilha.Push("do linkedin!");
+            pilha.Push("Remova-me");
+            pilha.Pop();
+            foreach (Object obj in pilha)
+            {
+                Console.WriteLine(obj); // Começa a partir do ultimo
+            }
+            Console.WriteLine($"Primeiro elem: {pilha.Peek()}");
+            Console.WriteLine($"Total: {pilha.Count}");
+
+        }
+
+        private void MostraSortedList()
+        {
+            /*
+             * Dictionary ordenado
+             */
+            Console.WriteLine("\n Na sorted list:");
+            SortedList<int, string> listaOrdenada = new SortedList<int, string>();
+            listaOrdenada.Add(4, "RJ");
+            listaOrdenada.Add(1, "SP");
+            listaOrdenada.Add(2, "SC");
+            listaOrdenada.Add(3, "MG");
+
+            foreach (string estado in listaOrdenada.Values)
+            {
+                Console.WriteLine(estado);
+            }
+        }
+
         private void MostraColecoes()
         {
             Console.WriteLine("\n Colecoes: ");
             MostraListas();
             MostraDict();
             MostraQueue();
+            MostraStack();
+            MostraSortedList();
         }
     }
 }

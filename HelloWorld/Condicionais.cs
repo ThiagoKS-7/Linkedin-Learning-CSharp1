@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Condicionais : IFundamentos
+    public class Condicionais : Fundamento
     {
         private Condicionais() { }
 
@@ -21,7 +21,7 @@ namespace HelloWorld
             return _instance;
         }
 
-        public void run()
+        public override void run()
         {
             MostraCondicionais();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Operadores : IFundamentos
+    public class Operadores : Fundamento
     {
         private Operadores() { }
 
@@ -21,7 +21,7 @@ namespace HelloWorld
             return _instance;
         }
 
-        public void run()
+        public override void run()
         {
             MostraOperadores();
         }
