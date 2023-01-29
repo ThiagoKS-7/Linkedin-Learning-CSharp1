@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public interface IFundamentos
+    public abstract class Fundamento
     {
-        public void run();
+        public abstract void run();
     }
 }

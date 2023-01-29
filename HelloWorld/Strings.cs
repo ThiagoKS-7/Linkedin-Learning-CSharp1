@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Strings : IFundamentos
+    public class Strings : Fundamento
     {
         private Strings() { }
 
@@ -21,7 +21,7 @@ namespace HelloWorld
             return _instance;
         }
 
-        public void run ()
+        public override void run ()
         {
             MostraStrings();
         }

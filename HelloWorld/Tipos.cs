@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Tipos : IFundamentos
+    public class Tipos : Fundamento
     {
         private Tipos() { }
 
@@ -21,7 +21,7 @@ namespace HelloWorld
             return _instance;
         }
 
-        public void run()
+        public override void run()
         {
             ConhecendoTipos();
         }

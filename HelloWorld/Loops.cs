@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    public class Loops: IFundamentos
+    public class Loops: Fundamento
     {
         private Loops() { }
 
@@ -20,7 +20,7 @@ namespace HelloWorld
             }
             return _instance;
         }
-        public void run ()
+        public override void run ()
         {
             MostraLoops();
         }

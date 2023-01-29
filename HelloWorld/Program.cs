@@ -12,18 +12,19 @@ namespace HelloWorld
         {
             // See https://aka.ms/new-console-template for more information
             Console.WriteLine("Hello, World!");
-
-            Tipos tp = Tipos.GetInstance();
-            Operadores op = Operadores.GetInstance();
-            Strings st = Strings.GetInstance();
-            Condicionais cd = Condicionais.GetInstance();
-            Loops lp = Loops.GetInstance();
-
-            tp.run();
-            op.run();
-            st.run();
-            cd.run();
-            lp.run();
+            dynamic[] fundamentos =
+            {
+                Tipos.GetInstance(),
+                Operadores.GetInstance(),
+                Strings.GetInstance(),
+                Condicionais.GetInstance(),
+                Loops.GetInstance(),
+                Colecoes.GetInstance(),
+            };
+            foreach (Fundamento item in fundamentos)
+            {
+                item.run();
+            }
             Console.Write("\n Clique qualquer tecla para sair... ");
             Console.ReadLine();
         }
