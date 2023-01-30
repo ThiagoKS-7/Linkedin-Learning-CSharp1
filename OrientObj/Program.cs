@@ -20,7 +20,7 @@ namespace OrientObj
         public static void Main()
         {
             Console.WriteLine("Orientação a Objeto");
-            Aluno a1 = new Aluno("Teste", 1, 9);
+            Aluno a1 = new Aluno("Teste", "teste@gmail.com", 1, 6m,7m, 8m);
             a1.MostraInfo();
             Console.Write("\n Clique qualquer tecla para sair... ");
             Console.ReadLine();
